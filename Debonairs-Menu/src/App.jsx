@@ -16,7 +16,7 @@ function App() {
 
   const hour = new Date().getHours();
   const open = 8;
-  const closed = 12;
+  const closed = 22;
 
   return (
     <div className="main">
@@ -29,7 +29,20 @@ function App() {
           our stove oven, all organic, all delicious
         </p>
       </div>
-      <div className="pizza-list">{pizzas}</div>
+      {pizzas.length > 0 ? (
+        <div className="pizza-list">{pizzas}</div>
+      ) : (
+        <div
+          style={{
+            color: "red",
+            textAlign: "center",
+            fontSize: "1.2em",
+            paddingBlockStart: "1.3em",
+          }}
+        >
+          Were currrently working on our menu. Please check back later
+        </div>
+      )}
 
       <p className="footer">
         {hour < closed &&
