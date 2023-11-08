@@ -42,6 +42,7 @@ img {
   gap: 1.5em;
   width: 68%;
   justify-self: center;
+  justify-content: space-evenly;
   padding-block: 2em;
 }
 .main .pizza-list .pizzas {
@@ -49,6 +50,10 @@ img {
   box-shadow: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.2);
   gap: 1em;
   transition: all 0.8s ease-in-out;
+}
+.main .pizza-list .pizzas .content {
+  display: grid;
+  justify-content: space-evenly;
 }
 .main .pizza-list .pizzas .content p {
   font-weight: 100;

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const Pizza = (props) => {
   const isDarkmode = true;
 
@@ -7,9 +8,16 @@ const Pizza = (props) => {
     <div className="pizzas">
       <img src={props.photoName} alt="" className="pizza-image" />
       <div className="content">
-        <h2 style={style}>{props.name}p</h2>
-        <p>{props.ingredients}</p>
-        <span>{props.price + 3}</span>
+        <div>
+          <h2 style={style}>{props.name}p</h2>
+          <p>{props.ingredients}</p>
+        </div>
+
+        {props.soldOut ? (
+          <div style={{ color: "red", display: "grid" }}>Sold Out</div>
+        ) : (
+          <span>{props.price + 3}</span>
+        )}
       </div>
     </div>
   );
