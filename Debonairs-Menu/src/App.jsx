@@ -17,13 +17,14 @@ function App() {
   const hour = new Date().getHours();
   const open = 8;
   const closed = 22;
+  const isOpen = hour < closed && hour >= open;
 
   return (
     <div className="main">
       <div className="main-header">
         <Header />
         <h2 className="our-menu">OUR MENU</h2>
-        <p>{hour > closed && `We are currently closed`}</p>
+
         <p className="menu-des">
           Authentic Italian cuisine, 6 creative dishes to choose free. All from
           our stove oven, all organic, all delicious
@@ -32,8 +33,11 @@ function App() {
       <div className="pizza-list">{pizzas}</div>
 
       <p className="footer">
-        We are open until 22:00. Come visit us or order online
+        {hour < closed &&
+          hour >= open &&
+          `We are currently open until ${closed}:00. Come Visit us or order online`}
       </p>
+      <p>{hour > closed && `We are currently closed`}</p>
       <Button />
     </div>
   );
