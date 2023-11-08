@@ -75,7 +75,7 @@ img {
   box-shadow: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.2);
   gap: 1em;
   transition: all 0.8s ease-in-out;
-  filter: grayscale(1);
+  filter: grayscale(0.6);
 }
 .main .pizza-list .sold-out .content {
   display: grid;
