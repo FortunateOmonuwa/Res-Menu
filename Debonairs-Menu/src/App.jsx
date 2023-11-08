@@ -44,16 +44,21 @@ function App() {
         </div>
       )}
 
-      <p className="footer">
-        {hour < closed &&
-          hour >= open &&
-          `We are currently open until ${closed}:00. Come Visit us or order online`}
-      </p>
+      <div className="footer">
+        {hour < closed && hour >= open && (
+          <div>
+            <p>
+              We are currently open until {closed}:00. Come Visit us or order
+              online
+            </p>
+            <Button />
+          </div>
+        )}
+      </div>
       <p className="footer">
         {hour > closed &&
           `We are currently closed. We're open from ${open}am till ${closed}pm`}
       </p>
-      <Button />
     </div>
   );
 }
