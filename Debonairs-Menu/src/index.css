@@ -50,14 +50,12 @@ img {
   gap: 1em;
   transition: all 0.8s ease-in-out;
 }
-.main .pizza-list .pizzas .content h2 {
-  padding-block-end: 10px;
-}
 .main .pizza-list .pizzas .content p {
-  padding-block-end: 5px;
   font-weight: 100;
   font-size: 0.9em;
   font-style: italic;
+  line-height: 1em;
+  padding-block: 8px;
 }
 .main .pizza-list .pizzas:hover {
   transform: translateY(3px);

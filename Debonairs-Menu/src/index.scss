@@ -51,13 +51,13 @@ img {
             transition: all 0.8s ease-in-out;
             .content {
                 h2 {
-                    padding-block-end: 10px;
                 }
                 p {
-                    padding-block-end: 5px;
                     font-weight: 100;
                     font-size: 0.9em;
                     font-style: italic;
+                    line-height: 1em;
+                    padding-block: 8px;
                 }
             }
 
