@@ -16,8 +16,7 @@ function App() {
 
   const hour = new Date().getHours();
   const open = 8;
-  const closed = 22;
-  const isOpen = hour < closed && hour >= open;
+  const closed = 12;
 
   return (
     <div className="main">
@@ -37,7 +36,10 @@ function App() {
           hour >= open &&
           `We are currently open until ${closed}:00. Come Visit us or order online`}
       </p>
-      <p>{hour > closed && `We are currently closed`}</p>
+      <p className="footer">
+        {hour > closed &&
+          `We are currently closed. We're open from ${open}am till ${closed}pm`}
+      </p>
       <Button />
     </div>
   );
