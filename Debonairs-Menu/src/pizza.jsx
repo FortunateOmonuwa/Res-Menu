@@ -5,7 +5,7 @@ const Pizza = ({ photoName, name, ingredients, price, soldOut }) => {
   const style = isDarkmode ? { color: "black" } : { color: "red" };
 
   return (
-    <div className="pizzas">
+    <div className={soldOut ? "sold-out" : "pizzas"}>
       <img src={photoName} alt="" className="pizza-image" />
       <div className="content">
         <div>
@@ -13,11 +13,7 @@ const Pizza = ({ photoName, name, ingredients, price, soldOut }) => {
           <p>{ingredients}</p>
         </div>
 
-        {soldOut ? (
-          <div style={{ color: "red", display: "grid" }}>Sold Out</div>
-        ) : (
-          <span>{price + 3}</span>
-        )}
+        {soldOut ? <div>Sold Out</div> : <span>{price + 3}</span>}
       </div>
     </div>
   );

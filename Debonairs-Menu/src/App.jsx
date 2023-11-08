@@ -23,14 +23,29 @@ function App() {
       <div className="main-header">
         <Header />
         <h2 className="our-menu">OUR MENU</h2>
-
-        <p className="menu-des">
-          Authentic Italian cuisine, 6 creative dishes to choose free. All from
-          our stove oven, all organic, all delicious
-        </p>
       </div>
       {pizzas.length > 0 ? (
-        <div className="pizza-list">{pizzas}</div>
+        <>
+          <p className="menu-des">
+            Authentic Italian cuisine, 6 creative dishes to choose free. All
+            from our stove oven, all organic, all delicious
+          </p>
+          <div className="pizza-list">{pizzas}</div>
+          <div className="footer">
+            {hour < closed && hour >= open && (
+              <div>
+                <p>
+                  We are open until {closed}:00. Come Visit us or order online
+                </p>
+                <Button />
+              </div>
+            )}
+          </div>
+          <p className="footer">
+            {hour > closed &&
+              `We are currently closed. We're open from ${open}am till ${closed}pm`}
+          </p>
+        </>
       ) : (
         <div
           style={{
@@ -43,22 +58,6 @@ function App() {
           Were currrently working on our menu. Please check back later
         </div>
       )}
-
-      <div className="footer">
-        {hour < closed && hour >= open && (
-          <div>
-            <p>
-              We are currently open until {closed}:00. Come Visit us or order
-              online
-            </p>
-            <Button />
-          </div>
-        )}
-      </div>
-      <p className="footer">
-        {hour > closed &&
-          `We are currently closed. We're open from ${open}am till ${closed}pm`}
-      </p>
     </div>
   );
 }

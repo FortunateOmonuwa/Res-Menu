@@ -32,8 +32,12 @@ img {
         .our-menu {
             border-top: 2px solid black;
             border-bottom: 2px solid black;
+            margin-block-end: 1em;
             width: 7em;
         }
+    }
+    .menu-des {
+        text-align: center;
     }
 
     .pizza-list {
@@ -68,6 +72,27 @@ img {
             &:hover {
                 transform: translateY(3px);
                 box-shadow: 1px 1px 8px 2px rgba(0, 0, 0, 0.2);
+            }
+        }
+        .sold-out {
+            display: flex;
+            box-shadow: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.2);
+            gap: 1em;
+            transition: all 0.8s ease-in-out;
+            filter: grayscale(1);
+
+            .content {
+                display: grid;
+                justify-content: space-evenly;
+                h2 {
+                }
+                p {
+                    font-weight: 100;
+                    font-size: 0.9em;
+                    font-style: italic;
+                    line-height: 1em;
+                    padding-block: 8px;
+                }
             }
         }
     }
